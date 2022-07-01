@@ -1,0 +1,23 @@
+{
+  "name": "matthew-glancy.github.io",
+  "version": "1.0.0",
+  "private": true,
+  "description": "matthew-glancy.github.io",
+  "author": "MatthewGlancy",
+  "keywords": [
+    "gatsby"
+  ],
+  "scripts": {
+    "develop": "gatsby develop",
+    "start": "gatsby develop",
+    "build": "gatsby build",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean",
+    "deploy": "gatsby build && rm -rf /tmp/gatsby-build && mkdir -p /tmp/gatsby-build && cp -r public/* /tmp/gatsby-build && git checkout main && cp -r /tmp/gatsby-build/* . && git add . && git commit -m 'Gatsby Deploy' && ggpush"
+  },
+  "dependencies": {
+    "gatsby": "^4.17.2",
+    "react": "^18.1.0",
+    "react-dom": "^18.1.0"
+  }
+}
