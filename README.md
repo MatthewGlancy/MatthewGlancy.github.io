@@ -4,7 +4,7 @@
   </a>
 </p>
 <h1 align="center">
-  [MatthewGlancy.github.io](https://MatthewGlancy.github.io)
+  <a href="https://MatthewGlancy.github.io">MatthewGlancy.github.io</a>
 </h1>
 
 ## 🚀 Quick start
