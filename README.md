@@ -4,7 +4,7 @@
   </a>
 </p>
 <h1 align="center">
-  Gatsby minimal starter
+  [MatthewGlancy.github.io](https://MatthewGlancy.github.io)
 </h1>
 
 ## 🚀 Quick start
@@ -25,7 +25,8 @@ Requires node 14
 
     Your site is now running at http://localhost:8000!
 
-## Build/Deploy
+
+## Build & Deploy  
 
 1.  **Build**
     ```shell
