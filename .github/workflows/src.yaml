@@ -41,6 +41,7 @@ jobs:
           mkdir -p /tmp/gatsby-build
           cp -r public/* /tmp/gatsby-build
           git fetch origin
+          git reset HEAD --hard
           git checkout origin/main
           cp -r /tmp/gatsby-build/* .
           git add .
