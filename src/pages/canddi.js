@@ -1,26 +1,18 @@
-import * as React from "react"
+import React, {Component} from "react"
+
+import "../styles/canddi.css"
 
 const styles = {
     body: {
         width: '100vw',
         height: '100vh',
-        backgroundColor: '#333333',
+        backgroundColor: '#efefef',
         fontFamily: 'sans-serif',
         position: 'absolute',
         top: '50%',
         left: '50%',
         transform: 'translate(-50%, -50%)',
         text: '#dedede',
-    },
-    card: {
-        backgroundColor: '#666666',
-        borderRadius: '5px',
-        padding: '10px 8px',
-        margin: '15px',
-        display: 'inline-block',
-        color: '#ffffff',
-        textDecoration: 'none',
-        fontWeight: 'bold',
     },
     container: {
         margin: '22% auto',
@@ -39,7 +31,7 @@ const links = [
     },
     {
         Name: 'GitHub',
-        URL: 'ttps://github.com/canddi'
+        URL: 'https://github.com/canddi'
     },
     {
         Name: 'Papertrail',
@@ -59,23 +51,26 @@ const links = [
     }
 ];
 
-// markup
-const CanddiPage = () => {
-    const cards = links.map(link => {
-        return (
-            <a style={styles.card} href={link.URL}>
-                <h2>{link.Name}</h2>
-            </a>
-        );
-    });
-    
+const Card = (link) => {
     return (
-        <main style={styles.body}>
-            <div style={styles.container}>
-                {cards}
-            </div>
-        </main>
+        <a className="card" href={link.URL} key={link.URL} target="_blank" rel="noreferrer">
+            <h2>{link.Name}</h2>
+        </a>
     );
+}
+
+class CanddiPage extends Component {
+    render() {
+        const cards = links.map(link => new Card(link));
+    
+        return (
+            <main style={styles.body}>
+                <div style={styles.container}>
+                    {cards}
+                </div>
+            </main>
+        );
+    }
 }
 
 export default CanddiPage
