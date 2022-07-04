@@ -37,13 +37,12 @@ jobs:
           npm install
           npm install -g gatsby-cli
           gatsby build
-          rm -rf /tmp/gatsby-build
-          mkdir -p /tmp/gatsby-build
-          cp -r public/* /tmp/gatsby-build
-          git fetch origin
-          git reset HEAD --hard
-          git checkout origin/main
-          cp -r /tmp/gatsby-build/* .
-          git add .
-          git commit -m 'Gatsby Deploy'
-          git push origin main
+          
+      - name: Push
+        uses: s0/git-publish-subdir-action@develop
+        env:
+          REPO: self
+          BRANCH: main # The branch name where you want to push the assets
+          FOLDER: public # The directory where your assets are generated
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }} # GitHub will automatically add this - you don't need to bother getting a token
+          MESSAGE: "Build: ({sha}) {msg}" # The commit message
