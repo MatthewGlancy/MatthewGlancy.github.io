@@ -51,7 +51,7 @@ const links = [
     }
 ];
 
-const Card = (link) => {
+function Card(link) {
     return (
         <a className="card" href={link.URL} key={link.URL} target="_blank" rel="noreferrer">
             <h2>{link.Name}</h2>
